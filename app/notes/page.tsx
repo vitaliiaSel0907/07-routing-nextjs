@@ -1,21 +1,12 @@
-   import css from "./Footer.module.css";
+ import { fetchNotes } from "@/lib/api/notes";
+import NoteList from "@/components/NoteList/NoteList";
 
-const Footer = () => {
-  return (
-    <footer className={css.footer}>
-      <div className={css.content}>
-        <p>© {new Date().getFullYear()} NoteHub. All rights reserved.</p>
+export default async function NotesPage() {
+  const data = await fetchNotes({
+    page: 1,
+    perPage: 12,
+    search: "",
+  });
 
-        <div className={css.wrap}>
-          <p>Developer: your name</p>
-          <p>
-            Contact us:{" "}
-            <a href="mailto:student@notehub.app">student@notehub.app</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+  return <NoteList notes={data.notes} />;
+}

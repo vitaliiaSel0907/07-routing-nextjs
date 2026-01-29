@@ -1,13 +1,6 @@
-import type { Metadata } from 'next';
-import './globals.css';
-
-import Header from '@/components/Header/Header';
-import { QueryProvider } from '@/providers/QueryProvider';
-
-export const metadata: Metadata = {
-  title: 'NoteHub',
-  description: 'Notes application',
-};
+import "./globals.css";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export default function RootLayout({
   children,
@@ -17,10 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <QueryProvider>
-          <Header />
-          <main>{children}</main>
-        </QueryProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

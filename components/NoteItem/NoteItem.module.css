@@ -1,0 +1,21 @@
+.item {
+  list-style: none;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.tag {
+  font-size: 12px;
+  color: #666;
+}

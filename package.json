@@ -11,14 +11,17 @@
   "dependencies": {
     "@tanstack/react-query": "^5.90.20",
     "axios": "^1.13.4",
+    "formik": "^2.4.9",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/yup": "^0.29.14",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "typescript": "^5"

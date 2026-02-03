@@ -1,5 +1,5 @@
-import NotesClient from "./Notes.client";
+import { redirect } from 'next/navigation';
 
-export default function NotesPage() {
-  return <NotesClient />;
+export default function NotePage() {
+  redirect('/notes');
 }

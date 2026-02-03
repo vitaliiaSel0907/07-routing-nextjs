@@ -1,21 +1,16 @@
-  import { fetchNotes } from '@/lib/api/notes';
-import NoteList from '@/components/NoteList/NoteList';
+import NotesClient from '@/app/notes/Notes.client';
 
-interface TagPageProps {
+
+interface NotesByTagPageProps {
   params: {
     tag?: string[];
   };
 }
 
-export default async function TagPage({ params }: TagPageProps) {
+export default function NotesByTagPage({
+  params,
+}: NotesByTagPageProps) {
   const tag = params.tag?.[0];
 
-  const data = await fetchNotes({
-    page: 1,
-    perPage: 12,
-    search: '',
-    tag: tag === 'all' ? undefined : tag,
-  });
-
-  return <NoteList notes={data.notes} />;
+  return <NotesClient tag={tag} />;
 }

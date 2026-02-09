@@ -1,5 +1,14 @@
- import { redirect } from 'next/navigation';
+import { fetchNoteById } from '@/lib/api/notes';
+import NoteDetails from './NoteDetails.client';
 
-export default function NotePage() {
-  redirect('/notes');
+interface Props {
+  params: {
+    id: string;
+  };
+}
+
+export default async function NotePage({ params }: Props) {
+  const note = await fetchNoteById(params.id);
+
+  return <NoteDetails note={note} />;
 }
